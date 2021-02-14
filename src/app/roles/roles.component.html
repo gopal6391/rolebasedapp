@@ -1,0 +1,14 @@
+<div class="card mt-4">
+    <h4 class="card-header">List of Roles</h4>
+    <div class="card-body">
+        <ul>
+            <li *ngFor="let role of roles | keyvalue">
+                {{role.key}}
+            </li>
+        </ul>
+        <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
+    </div>
+</div>
+
+
+

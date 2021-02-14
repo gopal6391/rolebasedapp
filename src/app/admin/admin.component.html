@@ -1,0 +1,28 @@
+﻿<div class="card mt-4">
+    <h4 class="card-header">Admin</h4>
+    <div class="card-body">
+        <p style="text-align: center;">This page can be accessed <u>only by administrators</u>.</p>
+        <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
+        <table class="table" *ngIf="users">
+            <thead>
+              <tr>
+                <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let el of users; let i=index">
+                <th scope="row">{{el.id}}</th>
+                <td>{{el.firstName}}</td>
+                <td>{{el.lastName}}</td>
+                <td>{{el.role}}</td>
+                <td>{{el.username}}</td>
+                <td>{{el.createdDate |date:'fullDate'}}</td>
+                <td><img
+                  src="assets/images/delete1.png"
+                  (click)="deleteUser(i)"
+                /></td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
